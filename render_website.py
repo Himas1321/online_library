@@ -1,6 +1,7 @@
 import json
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from livereload import Server
+from more_itertools import chunked
 
 
 def on_reload():
@@ -14,7 +15,9 @@ def on_reload():
     with open('meta_data.json', encoding='utf-8') as file:
         books = json.load(file)
 
-    rendered_page = template.render(books=books)
+    books_in_columns = list(chunked(books, 2))
+
+    rendered_page = template.render(books_in_columns=books_in_columns)
 
     with open('index.html', 'w', encoding='utf-8') as file:
         file.write(rendered_page)
