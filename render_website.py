@@ -35,10 +35,14 @@ def on_reload():
             file.write(rendered_page)
 
 
-if __name__ == '__main__':
+def main():
     on_reload()
 
     server = Server()
     server.watch('template.html', on_reload)
     server.watch('meta_data.json', on_reload)
     server.serve(root='.')
+
+
+if __name__ == '__main__':
+    main()
