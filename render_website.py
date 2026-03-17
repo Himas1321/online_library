@@ -19,9 +19,6 @@ def on_reload():
     with open('meta_data.json', encoding='utf-8') as file:
         books = json.load(file)
 
-    for book in books:
-        if not book['img_src'].startswith('media/'):
-            book['img_src'] = f"media/{book['img_src']}"
 
     os.makedirs('pages', exist_ok=True)
     pages = list(chunked(books, BOOKS_ON_PAGE))
