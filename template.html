@@ -36,7 +36,7 @@
                 <div class="card h-100">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="../{{ book.img_src }}" class="img-fluid rounded-start"
+                            <img src="/online_librery/{{ book.img_src }}" class="img-fluid rounded-start"
                                  alt="Обложка книги {{ book.title }}">
                         </div>
                         <div class="col-md-8">
@@ -48,7 +48,7 @@
                                     <span class="badge bg-secondary">{{ genre.strip() }}</span>
                                     {% endfor %}
                                 </p>
-                                <a href="../{{ book.book_path }}" target="_blank"
+                                <a href="/online_librery/{{ book.book_path }}" target="_blank"
                                    class="btn btn-primary">Читать</a>
                             </div>
                         </div>
