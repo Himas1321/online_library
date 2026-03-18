@@ -20,6 +20,7 @@ def on_reload():
         books = json.load(file)
 
 
+
     os.makedirs('pages', exist_ok=True)
     pages = list(chunked(books, BOOKS_ON_PAGE))
 
